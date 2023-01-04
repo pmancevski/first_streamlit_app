@@ -1,5 +1,6 @@
 import streamlit
 import pandas
+import requests
 
 # Read CSV file from snowflake AWS bucket
 my_fruit_list = pandas.read_csv(
@@ -24,3 +25,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
+
+# fruit API response
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruityvice_response)
