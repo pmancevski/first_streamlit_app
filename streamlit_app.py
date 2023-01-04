@@ -1,6 +1,7 @@
 import streamlit
 import pandas
 import requests
+import snowflake.connector
 
 # Read CSV file from snowflake AWS bucket
 my_fruit_list = pandas.read_csv(
